@@ -96,7 +96,14 @@ class Login_Screan extends StatelessWidget {
                         SizedBox(
                           height: 30,
                         ),
-                        defultButton(text: 'Login', function: (){}),
+                        defultButton(text: 'Login', function: (){
+                          if(formKey.currentState!.validate()){
+                            cubit.UserLogin(
+                                email: emailController.text,
+                                password: passwordController.text,
+                            );
+                          }
+                        }),
                         SizedBox(
                           height: 30,
                         ),
